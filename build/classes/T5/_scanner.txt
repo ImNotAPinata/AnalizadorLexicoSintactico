@@ -1,0 +1,110 @@
+package T5;
+
+import java_cup.runtime.*;
+import javax.swing.*;
+
+%%
+%{
+int columna=1;
+%}
+%public
+%cup
+%line
+%full
+%unicode
+%ignorecase
+%char
+
+%eofval{
+{return new Symbol(sym.EOF, null); }
+%eofval}
+
+ALPHA=[A-Za-z]
+DIGIT=[0-9]
+
+%%
+
+"libreria"				{return new Symbol(sym.LIBRERIA);}
+
+"principal"				{return new Symbol(sym.PRINCIPAL);}
+
+"nuevo"					{return new Symbol(sym.NUEVO);}
+
+"si"					{return new Symbol(sym.SI);}
+
+"entonces"				{return new Symbol(sym.ENTONCES);}
+
+"sino"					{return new Symbol(sym.SINO);}
+
+"para"					{return new Symbol(sym.PARA);}
+
+"porcada"				{return new Symbol(sym.PORCADA);}
+
+"en"					{return new Symbol(sym.EN);}
+
+"opcion"				{return new Symbol(sym.OPCION);}
+
+"mientras"				{return new Symbol(sym.MIENTRAS);}
+
+"hacermientras"			{return new Symbol(sym.HACERMIENTRAS);}
+
+"retorna"				{return new Symbol(sym.RETORNA);}
+
+"escribe"				{return new Symbol(sym.ESCRIBE);}
+
+"lee"					{return new Symbol(sym.LEE);}
+
+"muestramensaje"		{return new Symbol(sym.MENSAJE);}
+
+"entero"|"flotante"|"real"|"decimal" {return new Symbol(sym.TIPONUMBER);}
+
+"cadena"|"caracter"     {return new Symbol(sym.TIPOCHARS);}
+
+"booleano"              {return new Symbol(sym.TIPOBOOLEANO);}
+
+","                     {return new Symbol(sym.COMA);}
+
+{DIGIT}+ 				{return new Symbol(sym.ENTERO);}
+
+{DIGIT}+"."{DIGIT}+ 	{return new Symbol(sym.REAL);}
+
+{ALPHA}({ALPHA}|{DIGIT}|_)* 		{return new Symbol(sym.VARIABLE);}
+
+{ALPHA}+                {return new Symbol(sym.CADENA);}
+
+"verdadero"|"falso"     {return new Symbol(sym.BOOLS);}
+
+"=" 					{return new Symbol(sym.ASIGNADOR);}
+
+"+"|"-"|"*"|"/"|"%"		{return new Symbol(sym.OPERADORES);}
+
+">"|">="|"<"|"<="|"<>"|"=="		{return new Symbol(sym.COMPARADORES);}
+
+"++"				{return new Symbol(sym.INCREMENTADOR);}
+
+"--"				{return new Symbol(sym.DECREMENTADOR);}
+
+"_"					{return new Symbol(sym.GUIONBAJO);}
+
+"|"|"&&"		    {return new Symbol(sym.CONDICIONAL);}
+
+":"					{return new Symbol(sym.DOSPUNTOS);}
+
+"{"					{return new Symbol(sym.LIZQUIERDO);}
+
+"}"	                {return new Symbol(sym.LDERECHO);}
+
+";"					{return new Symbol(sym.PUNTOCOMA);}
+
+"("					{return new Symbol(sym.PIZQUIERDO);}
+
+")"					{return new Symbol(sym.PDERECHO);}
+
+[ ]*         { /* ignore white space. */ }
+[\t]*         { /* ignore white space. */ }
+[\r]*         { /* ignore white space. */ }
+[\n]*         { /* ignore white space. */ }
+[\f]*         { /* ignore white space. */ }
+[\b]*         { /* ignore white space. */ }
+
+. 					{JOptionPane.showMessageDialog(null,"ERROR: Caracter ilegal");}

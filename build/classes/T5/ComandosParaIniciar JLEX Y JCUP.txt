@@ -1,0 +1,13 @@
+JLEX
+
+
+1.Fijarse que tienen JLex en la pc y compilado -> javac JLex/Main.java
+
+2. Escribir el comando: java JLex.main -YOURFILE-
+
+
+JCUP
+
+1. Tener cup en la pc agregado al projecto (tener archivo jar)
+
+2. Escribir el comando: java -jar java-cup-11a.jar -myGrammar.cup-

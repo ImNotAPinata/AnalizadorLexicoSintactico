@@ -1,0 +1,12 @@
+nuevo principal (nuevo)
+{
+entero a=10;
+operacion (a);
+lee (esto);
+entero i;
+para (i=0;i<20;i++)
+{escribe (el valor de i es)+i;}
+}
+
+entero principal (entero a)
+{escribe (llego 10 ok);}

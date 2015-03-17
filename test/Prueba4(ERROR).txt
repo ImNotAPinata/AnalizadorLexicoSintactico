@@ -1,0 +1,4 @@
+nuevo principal (nuevo loco)
+{
+ escribe ( hola a todos!);
+}

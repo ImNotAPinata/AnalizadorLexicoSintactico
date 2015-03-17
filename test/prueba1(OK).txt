@@ -1,0 +1,15 @@
+nuevo principal (nuevo)
+{
+entero a=0;
+{ escribe (hola mundo); 
+a++;
+si (a>1) entonces
+{lee (omg es 1);
+operacion(a);}
+}
+hacermientras(a>2) 
+}
+
+entero operacion (entero a)
+{ escribe (el resultado es) +a;
+}
